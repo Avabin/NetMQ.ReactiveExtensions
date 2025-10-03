@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <Authors>Shane Tolmie and Contributors</Authors>
+    <Company>NetMQ</Company>
+    <Product>NetMQ.ReactiveExtensions</Product>
+    <Description>Effortlessly send messages anywhere on the network using Reactive Extensions (RX). Uses NetMQ as the transport layer.</Description>
+    <Copyright>Copyright ©Shane Tolmie and Contributors 2016-2025</Copyright>
+    <PackageProjectUrl>https://github.com/NetMQ/NetMQ.ReactiveExtensions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/NetMQ/NetMQ.ReactiveExtensions</RepositoryUrl>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <TargetFrameworks>net9.0;netstandard2.1</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NetMQ" Version="4.0.2.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="protobuf-net" Version="3.2.56" />
+    <PackageReference Include="System.Reactive" Version="6.1.0" />
+  </ItemGroup>
+
+</Project>
