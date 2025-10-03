@@ -98,32 +98,32 @@ publisher.OnNext(new MyMessage(42, "Bill");
 
 See [NetMQ.ReactiveExtensions](https://www.nuget.org/packages/NetMQ.ReactiveExtensions/).
 
-The NuGet package 0.9.3 is designed for .NET 4. It depends on Reactive Extensions v2.2.5 (this is difficult to find, can download the packages manually from NuGet).
+This library has been migrated to modern .NET and now targets .NET 9, using the latest versions of dependencies:
+- System.Reactive 6.1.0
+- NetMQ 4.0.2.1
+- protobuf-net 3.2.56
 
-The NuGet package 0.9.4-rc7 is designed .NET Core 1.1, .NET 4.5, and .NET Standard 1.6. If you want to build it for other platforms, please let me know. If you have trouble loading this, load the Git branch for the 0.9.3 release.
-
-## .NET Core 1.1 Ready
-
-As of v0.9.4-rc7, this package will build for:
-- .NET 4.5 and up
-- [.NET Core 1.1](https://www.microsoft.com/net/download/core)
-- .NET Standard 1.6 and up
-
-As this library supports .NET Standard 1.6 (which is a subset of .NET Core 1.1), this library should be compatible with:
+This library is compatible with:
 - Windows
 - Linux
 - Mac
 
-This library is tested on Window and Linux. If it passes it's unit tests on any given platform, then it should perform nicely on different architectures such as Mac.
+All projects use modern SDK-style .csproj files and .NET 9 for optimal performance and compatibility.
 
 ## Compiling from source
 
-- Install [Visual Studio 2015 Update 3](https://www.visualstudio.com/en-us/news/releasenotes/vs2015-update3-vs).
-- Install "[.NET Core 1.1 SDK - Installer](https://www.microsoft.com/net/download/core)" from https://www.microsoft.com/net/download/core.
-- NuGet Restore. It may not compile until a manual "[nuget restore](https://docs.nuget.org/ndocs/consume-packages/package-restore)" is performed for each project (this also rebuilds the `project.lock.json` file). You can either do this from the command line, or by right clicking on  the solution and choosing `Restore NuGet packages`.
-- If the project does not compile on your machine, raise an issue here on GitHub.
+Requirements:
+- Install [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0) or later
+- Visual Studio 2022, Visual Studio Code, or any IDE that supports .NET 9
 
-NOTE: Not compatible with .NET Core 1.0 or .NET Core 1.0.1. Must install .NET Core 1.1 and above to avoid potential compile errors.
+Build steps:
+```bash
+dotnet restore
+dotnet build
+dotnet test
+```
+
+If the project does not compile on your machine, raise an issue here on GitHub.
 
 ## Demos
 
