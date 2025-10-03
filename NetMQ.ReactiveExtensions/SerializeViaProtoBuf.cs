@@ -1,7 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 using ProtoBuf;
-
+[assembly: InternalsVisibleTo("NetMQ.ReactiveExtensions.Tests")]
 namespace NetMQ.ReactiveExtensions
 {
 	/// <summary>
@@ -9,7 +10,7 @@ namespace NetMQ.ReactiveExtensions
 	/// </summary>
 	public static class SerializeViaProtoBuf
 	{
-		public static byte[] SerializeProtoBuf<T>(this T message)
+		internal static byte[] SerializeProtoBuf<T>(this T message)
 		{
 			byte[] result;
 			using (var stream = new MemoryStream())
@@ -20,7 +21,7 @@ namespace NetMQ.ReactiveExtensions
 			return result;
 		}
 
-		public static T DeserializeProtoBuf<T>(this byte[] bytes)
+		internal static T DeserializeProtoBuf<T>(this byte[] bytes)
 		{
 			T result;
 			using (var stream = new MemoryStream(bytes))
