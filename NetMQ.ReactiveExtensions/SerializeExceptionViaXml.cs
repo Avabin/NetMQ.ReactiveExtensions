@@ -38,9 +38,7 @@ namespace NetMQ.ReactiveExtensions
                 }
 
                 // The root element is the Exception's type.
-                // TODO: When .NET Core 1.1 is available, fix these lines.
-                string type = nameof(exception).ToString(); // Compatible with .NET Core 1.0.
-                //string type = exception.GetType().ToString(); // Compatible with .NET Core 1.1+.
+                string type = exception.GetType().ToString();
                 XElement root = new XElement(type);
 
                 root.Add(new XElement("Message", exception.Message));
